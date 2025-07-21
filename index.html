@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auronet</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="image/favicon-32x32.png">
+
+<style>
+  :root {
+    --primary-orange: #f9a825;
+    --gradient-orange: linear-gradient(to right, #f9a825, #fbc02d);
+    --soft-white: #ffffff;
+    --dark-black: #0a0a0a;
+    --gray: #888888;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .mobile-wrapper {
+  max-width: 420px;  /* Typical mobile width */
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* optional shadow */
+  background-color: #fff;
+}
+
+
+  body {
+    background-color:  #ffffff;
+    color: var(--soft-white);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+
+  header {
+    background-color:  #ffffff;
+    text-align: center;
+  }
+
+  header img {
+    width: 100%;
+    height: auto;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  .about {
+    background-color:white;
+    color:black;
+    border-radius: 10px;
+    margin: 15px 10px;
+    padding: 20px;
+    text-align: justify;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    border-bottom: 7px solid var(--primary-orange);
+
+  }
+
+  .section-title {
+    color: var(--primary-orange);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 30px 20px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    margin-top: 50px;
+
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .service-card {
+    background-color:white;
+    padding: 15px;
+    border-left: 5px solid var(--primary-orange);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: black;
+  }
+
+  .social-fixed {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .social-icon {
+    background-color: rgba(249, 168, 37, 0.7);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius:50px;
+    transition: background 0.3s;
+  }
+
+  .social-icon:hover {
+    background-color: #fbc02d;
+  }
+
+
+  .testimonials {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 30px 20px;
+  margin: 20px 10px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+  margin-top: 50px;
+
+
+}
+
+.testimonial-box {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-bottom: 7px solid var(--primary-orange);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+.testimonial-box span {
+  font-size: 0.9em;
+  color: #666;
+}
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btn-submit {
+  background: var(--primary-orange);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn-submit:hover {
+  background: #fbc02d;
+}
+
+  .contact {
+    background-color: var(--gray);
+    color: whitesmoke;
+    text-align: left;
+    padding: 20px 20px 0 20px;
+    margin: 50px 10px 0px 10px;
+    text-decoration: none;
+    border-bottom: 5px solid var(--primary-orange);
+    border-top: 5px solid var(--primary-orange);
+    border-radius: 10px;
+  }
+
+  .contact i {
+    margin-right: 8px;
+    color: var(--primary-orange);
+  }
+
+  .contact a {
+    color: whitesmoke;
+  }
+
+  footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    color: #aaa;
+  }
+
+  @media (min-width: 600px) {
+    .services {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .service-card {
+      flex: 1 1 45%;
+      max-width: 300px;
+    }
+  }
+
+  @keyframes slideUpFade {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideDownFade {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .header-img-up {
+    animation: slideUpFade 3.5s ease-in-out forwards;
+  }
+
+  .header-img-down {
+    animation: slideDownFade 3.5s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .social-fixed,
+  .about,
+  .services,
+  .contact,
+  .footer, 
+  .header_img{
+    animation: fadeIn 5s ease-in-out forwards;
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-wrapper">
+
+<header style="text-align: center;">
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <img src="image/background.png" alt="Auronet Logo"
+         style="width: 100%; margin-bottom: 15px;" class="header_img" />
+
+    <img src="image/c-1--500x500.webp" alt="CCTV_black"
+         style=" width: 90%; margin-top: 50px; margin-bottom: 50px;" class="header_img" />
+  </div>
+</header>
+
+<section class="about">
+  <h2 class="section-title">About Us</h2>
+  <p>At Auronet, we specialize in professional CCTV installations, advanced networking solutions, and comprehensive IT services. 
+    With a strong commitment to reliability, innovation, and client satisfaction, we provide smart security and technology systems 
+    that empower businesses to operate securely and efficiently.</p>
+</section>
+
+<section class="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <strong style="color: var(--primary-orange);">CCTV Installation</strong><br>
+      <p>Professional surveillance camera setup for homes and businesses.</p>
+    </div>
+    <div class="service-card">
+      <strong style="color: var(--primary-orange);">Access Control Installation</strong><br>
+      Secure entry systems for enhanced safety and control.
+    </div>
+    <div class="service-card">
+      <strong style="color: var(--primary-orange);">Computer Networking</strong><br>
+      Wired and wireless networking solutions for offices and homes.
+    </div>
+    <div class="service-card">
+      <strong style="color: var(--primary-orange);">Infrastructure Cabling</strong><br>
+      Structured cabling for voice, data, and network systems.
+    </div>
+  </div>
+</section>
+
+<div class="social-fixed">
+  <a href="https://www.facebook.com/profile.php?id=61578436160458" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://wa.me/+94752268216" style="text-decoration: none; color: white; font-size:xx-large; background-color: rgba(44, 249, 37, 0.7);
+  padding: 10px 20px; border-radius: 50%;"><i class="fab fa-whatsapp"></i></a>
+  <!--<a href="tel:+94 741 396 982" class="social-icon phone"><i class="fa fa-phone"></i></a>-->    
+  <a href="https://auronetweb.github.io/auronet.lk" class="social-icon globe" style="padding: 10px 15px;"><i class="fa fa-globe"></i></a>
+</div>      
+
+
+<section class="testimonials">
+  <h2 class="section-title">What Our Clients Say</h2>
+  <div class="testimonial-box">
+    <p>“Auronet did a fantastic job with our CCTV system. Friendly team and reliable service!”</p>
+    <span>- Mrs. Nisansala, Wattala</span>
+  </div>
+  <div class="testimonial-box">
+    <p>“Excellent IT support. Networking and access control installed professionally.”</p>
+    <span>- Mr. Fernando, Negombo</span>
+  </div>
+</section>
+
+
+<!--<section class="contact">
+  <h2>Send a Message</h2>
+  <form action="https://formsubmit.co/f9c837b4e52fabc5f6c75bac1fb7ba4e" method="POST">
+    <div class="form-group">
+      <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+      <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+    </div>
+    <div class="form-group">
+      <input type="text" name="phone" class="form-control" placeholder="Phone Number">
+    </div>
+    <div class="form-group">
+      <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+    </div>
+
+    Hidden Options 
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+    <button type="submit" class="btn-submit">Send</button>
+  </form>
+</section>-->
+
+<section class="contact">
+  <h2>Contact Us</h2><br>
+  <p><a href="https://auronetweb.github.io/auronet.lk/"><i class="fa fa-globe"></i>www.auronetweb.lk</a></p>
+  <p><i class="fas fa-envelope"></i> <a href="mailto:biz.auronet@outlook.com">biz.auronet@outlook.com</a></p>
+  <p><i class="fas fa-phone"></i> <a href="tel:+94752268216">0752 268 216</a></p>
+  <!--<p><a href="https://wa.me/+94773139254"><i class="fab fa-whatsapp"></i>0773 139 254</a></p>-->
+  <p><i class="fas fa-map-marker-alt"></i>553/2 Pitipana South, Homagama</p>
+
+  <div style="margin-top: 20px;overflow: hidden; width: 100%;">
+    <iframe style="border-radius: 10px;"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d413.3165140755229!2d80.04103003617756!3d6.812543349777202!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24dba19c978bf%3A0xb14387eb39efdea0!2sAuronet!5e1!3m2!1sen!2slk!4v1753115052784!5m2!1sen!2slk"
+      width="100%" height="180" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Auronet Technologies (PVT) LTD. All rights reserved.
+</footer>
+</div>
+</body>
+</html>
+
